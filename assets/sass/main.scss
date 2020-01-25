@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+// Icons
+@import url("https://use.fontawesome.com/releases/v5.0.6/css/all.css");
+@import "../css/vendor/nucleo-icons.css";
+// CSS
+@import "../css/vendor/blk-design-system.min.css";
+@import "../css/vendor/animate.min.css";
+
+// Variables
+// IMGs
+$header-bg-img: url("../img/banner_01_by_watari.jpg") no-repeat center center;
+
+// Colors
+$body-bg-color-1: #1a1a1a;
+$body-bg-color-2: #242424;
+
+.body-bg-color-1 {
+  background-color: $body-bg-color-1 !important;
+}
+
+.body-bg-color-2 {
+  background-color: $body-bg-color-2 !important;
+}
+
+.svg-bg-color1 {
+  fill: $body-bg-color-1 !important;
+}
+
+.svg-bg-color2 {
+  fill: $body-bg-color-2 !important;
+}
+
+$navbar-bg-color: rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%;
+
+$blackwhite-gradient: rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 100%;
+
+$blackwhite-gradient-square: rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 20%,
+  rgba(240, 240, 240, 0) 80%, rgba(0, 0, 0, 0.6) 100%;
+
+$black-transparent: rgba(26, 26, 26, 0.9);
+
+$footer-bg-color: rgba(20, 25, 48, 0.9) 0%, rgba(48, 29, 68, 0.9) 100%;
+
+// Functions
+@mixin linear-gradient($angle, $colors) {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // background: -moz-linear-gradient($angle, $colors);
+  // background: -webkit-linear-gradient($angle, $colors);
+  background: linear-gradient($angle, $colors);
+}
+
+// Core
+body {
+  background-color: $body-bg-color-1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+svg {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.svg-absolute {
+  position: absolute;
+}
+
+.svg-relative {
+  position: relative;
+}
+
+// Classes
+.navbar {
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+  background: transparent linear-gradient(160deg, $navbar-bg-color);
+}
+
+.navbar-collapse {
+  background: $black-transparent;
+}
+
+.navbar-transparent {
+  box-shadow: none;
+}
+
+.header-bg {
+  background-size: cover;
+  background: $header-bg-img;
+}
+
+.bg-gradient:after {
+  @include linear-gradient(160deg, $blackwhite-gradient);
+}
+
+.bg-gradient-square:after {
+  @include linear-gradient(0deg, $blackwhite-gradient-square);
+}
+
+.no-ml {
+  margin-left: auto;
+}
+
+.footer-gradient {
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+  background: transparent linear-gradient(160deg, $footer-bg-color);
+  border-top: 2px solid #e14eca;
+}

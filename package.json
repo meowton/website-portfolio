@@ -1,0 +1,55 @@
+{
+  "_from": "html-start",
+  "_id": "html-start",
+  "_inBundle": false,
+  "_location": "/html-start",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "html-start",
+    "name": "html-start",
+    "escapedName": "html-start",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Start package for HTML",
+  "devDependencies": {
+    "autoprefixer": "^9.7.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-minify": "^0.5.1",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3"
+  },
+  "homepage": "#",
+  "keywords": [
+    "sass",
+    "css",
+    "start"
+  ],
+  "license": "MIT",
+  "name": "html-start",
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "css-watch": "npm run css-build -- --watch",
+    "css-postcss": "postcss --use autoprefixer --replace css/*.css --no-map",
+    "css-build": "node-sass assets/sass --output css/ --output-style compressed",
+    "css-deploy": "npm run css-build && npm run css-postcss",
+    "js-watch": "npm run js-build -- --watch",
+    "js-build": "babel assets/js --out-dir js/",
+    "deploy": "npm run css-deploy && npm run js-build",
+    "start": "npm-run-all --parallel css-watch js-watch"
+  },
+  "version": "0.0.1"
+}
