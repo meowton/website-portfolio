@@ -18,11 +18,11 @@
   "deprecated": false,
   "description": "Start package for HTML",
   "devDependencies": {
-    "autoprefixer": "^9.7.1",
+    "autoprefixer": "^9.7.4",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "babel-minify": "^0.5.1",
-    "node-sass": "^4.13.0",
+    "babel-preset-env": "^1.7.0",
+    "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.3"
   },
